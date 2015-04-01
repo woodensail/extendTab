@@ -5,7 +5,7 @@
  */
 
 (function ($) {
-    $.extendTab = function () {
+    $.extendTab = function (delay) {
         $('[tabindex]').each(function (i, v) {
             var _this = $(v);
             var flag = true;
@@ -53,6 +53,11 @@
                 }
             }
         });
+        if(delay){
+            setTimeout(function () {
+                tabList.eq(0).focus()
+            }, delay);
+        }
     };
 
     $.extendTab.default = {
